@@ -3,13 +3,45 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Untitled Document</title>
+  <title>Brightcove Player Sample: Tabbed Playlist</title>
+  <link href="tabbed-playlist.css" rel="stylesheet">
 </head>
 
 <body>
+  <div class="container">
+    <div>
+      <ul id="menu">
+        <li>
+          <input id="tab0" type="button" class="button" onclick="processTab(0);" value="Short Videos"></input>
+        </li>
+        <li>
+          <input id="tab1" type="button" class="button" onclick="processTab(1);" value="Assorted Bugs and Birds">
+        </li>
+        <li>
+          <input id="tab2" type="button" class="button" onclick="processTab(2);" value="Sea and Water">
+        </li>
+        <li><input id="tab3" type="button" class="button" onclick="processTab(3);" value="Sea Life"></li>
+      </ul>
+    </div>
 
+    <div class="myplayer">
 
+      <video id="myPlayerID"
+                data-account="1752604059001"
+                data-player="SJly4aArKZ"
+                data-embed="default"
+                data-application-id
+                class="video-js"
+                controls
+                width="450"
+                height="253.13"></video>
+              <script src="//players.brightcove.net/1752604059001/SJly4aArKZ_default/index.min.js"></script>
+              <ol class="vjs-playlist"></ol>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="tabbed-playlist.js"></script>
+  <script>videojs('myPlayerID').tabbedPlaylist();</script>
 
 </body>
-
 </html>
